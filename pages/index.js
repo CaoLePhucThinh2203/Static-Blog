@@ -1,4 +1,5 @@
 import { getSortedPostsData } from '../lib/posts';
+import Date from '../components/date'; // Import component Date
 
 // Next.js gọi hàm này lúc build, KHÔNG phải lúc user request
 export async function getStaticProps() {
@@ -14,7 +15,11 @@ export default function Home({ allPostsData }) {
     <ul>
       {allPostsData.map(({ id, date, title }) => (
         <li key={id}>
-          {title} — {date}
+          {title}
+          <br />
+          <small>
+            <Date dateString={date} /> {/* Sử dụng component Date */}
+          </small>
         </li>
       ))}
     </ul>

@@ -24,19 +24,3 @@ export default function Post({ postData }) {
     </article>
   );
 }
-
-// Trong trang bài viết (pages/posts/[id].js)
-import Date from '../../components/date';
-
-<article>
-  <h1>{postData.title}</h1>
-  <Date dateString={postData.date} />
-  <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-</article>
-
-// Trong trang chủ (pages/index.js)
-import Date from '../components/date';
-
-<small>
-  <Date dateString={date} />
-</small>
